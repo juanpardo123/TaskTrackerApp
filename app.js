@@ -107,7 +107,7 @@ let newItem = {
     id: data.tasks.length,
     title: req.body.title,
     description: req.body.description,
-    status: req.body.status,
+    status: 'pending',
     priority: req.body.priority,
     due_date: req.body.due_date
 }

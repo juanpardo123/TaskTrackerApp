@@ -18,13 +18,12 @@
                             <input type="text" value="<%= singledata.title%>" class="title" id="title" name="title">
                             <input type="text" value="<%= singledata.description%>"  class="title" id="description" name="description">
                             <input type="text" value="<%= singledata.status%>" class="title" id="status" name="status">
-                            <select id="priority" name="cars" class="title"  name="priority" >
-                                <option value="volvo">Volvo</option>
-                                <option value="saab">Saab</option>
-                                <option value="fiat">Fiat</option>
-                                <option value="audi">Audi</option>
+                            <select id="priority" class="title"  name="priority" >
+                                <option value="<%= singledata.priority%>"><%= singledata.priority%></option>
+                                <option value="High">High</option>
+                                <option value="Medium">Medium</option>
+                                <option value="Low">Low</option>
                               </select>
-                            <input type="text" value="<%= singledata.priority%>"  class="title" id="priority" name="priority">
                             <input type="date" value="<%= singledata.due_date%>" class="title" id="date" name="date">
                             <input type="submit" value="Submit Changes">
                         </form>
