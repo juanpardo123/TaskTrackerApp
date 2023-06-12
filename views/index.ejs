@@ -20,6 +20,9 @@
                     
                         <div class="opt">
                             <img src="images/menu-dots-vertical.svg" class="options">
+                            <form action="/edit/<%=e.id%>" method="post" class="edit">
+                                <input type="submit" value="edit" id="edit">
+                            </form>
                         </div>
                         <input type="text" value="<%= e.title%>" readonly class="title" id="title<%= e.id%>">
                         <input type="text" value="<%= e.description%>" readonly class="title" id="desc<%= e.id%>">
@@ -29,9 +32,15 @@
                         <form action="/delete/<%=e.id%>" method="post" class="wrap">
                         <input type="submit" value="Delete" id="delete">
                         </form>
-                        <form action="/edit/<%=e.id%>" method="post" class="wrap">
-                            <input type="submit" value="edit" id="edit">
-                        </form>
+                        <% if(e.status == 'complete'){ %>
+                        <form action="/incomplete/<%=e.id%>" method="post" class="wrap">
+                                <input type="submit" value="Mark as pending" id="delete">
+                            </form>
+                        <%}else{%>
+                            <form action="/complete/<%=e.id%>" method="post" class="wrap">
+                                <input type="submit" value="Mark as complete" id="delete">
+                            </form>
+                            <%}%>
                         <script>
                             function myfunction(){
                                 console.log("hi");
@@ -50,6 +59,9 @@
                         
                         .card{
                             justify-content: center;
+                        }
+                        .edit{
+                            background-image: url(images/menu-dots-vertical.svg);
                         }
                         
                     </style>

@@ -51,6 +51,41 @@ app.post('/delete/:id', (req,res)=>{
    }
 });
 
+app.post('/complete/:id', (req,res)=>{
+    let localId= req.params.id
+    let index = indexFromID(localId,data.tasks)
+    console.log(index);
+    if(index > -1 && index < data.tasks.length){
+        data.tasks[index].status = 'complete'
+ 
+     let dataString = JSON.stringify(data);
+     fs.writeFileSync('./data/data.json', dataString)
+     res.redirect('/')
+    }
+    else{
+     console.log(data.tasks);
+     res.redirect('/error')
+    }
+ });
+
+ app.post('/incomplete/:id', (req,res)=>{
+    let localId= req.params.id
+    let index = indexFromID(localId,data.tasks)
+    console.log(index);
+    if(index > -1 && index < data.tasks.length){
+        data.tasks[index].status = 'Pending'
+ 
+     let dataString = JSON.stringify(data);
+     fs.writeFileSync('./data/data.json', dataString)
+     res.redirect('/')
+    }
+    else{
+     console.log(data.tasks);
+     res.redirect('/error')
+    }
+ });
+
+
 function indexFromID(localId, arrObjects){
     for(i=0; i < arrObjects.length; i++){
         if(arrObjects[i].id == localId){
