@@ -1,0 +1,73 @@
+<%- include('./partials/nav.ejs') %>
+    <article>
+        <div class="galaxy">
+            <img src="/images/merc.svg" class="merc">
+            <img src="/images/red.svg" class="red">
+            <img src="/images/Compass.png" class="compass ">
+            <img src="/images/blue.svg" class="blue ">
+            <img src="/images/jupiter.svg" class="jupiter">
+
+        </div>
+        <div class="cards-holder">
+                
+                    <div class="card">
+                        <div class="opt">
+                            <img src="/images/menu-dots-vertical.svg" class="options">
+                        </div>
+                        <form action="/submit/<%=singledata.id%>" method="post">
+                            <input type="text" value="<%= singledata.title%>" class="title" id="title" name="title">
+                            <input type="text" value="<%= singledata.description%>"  class="title" id="description" name="description">
+                            <input type="text" value="<%= singledata.status%>" class="title" id="status" name="status">
+                            <select id="priority" name="cars" class="title"  name="priority" >
+                                <option value="volvo">Volvo</option>
+                                <option value="saab">Saab</option>
+                                <option value="fiat">Fiat</option>
+                                <option value="audi">Audi</option>
+                              </select>
+                            <input type="text" value="<%= singledata.priority%>"  class="title" id="priority" name="priority">
+                            <input type="date" value="<%= singledata.due_date%>" class="title" id="date" name="date">
+                            <input type="submit" value="Submit Changes">
+                        </form>
+            
+                    </div>
+
+          
+             
+        </div>
+
+    </article>
+    
+   
+</body>
+<style>
+#Layer_1{
+    fill:#EC706B
+}
+.title{
+        text-align: center;
+    background: none;
+    outline-style: solid;
+    outline-color: #c99dff61;
+    border-radius: 15px;
+    border-style: none;
+    color: aliceblue;
+    font-family: fangsong;
+    margin: 8px;
+    font-size: xx-large;
+    width: 100%;
+
+}
+.title:focus{
+    text-align: center;
+    background: none;
+    outline-style: solid;
+    outline-color: #fefefe;
+    border-radius: 15px;
+    border-style: none;
+    color: aliceblue;
+    font-family: fangsong;
+    font-size: xx-large;
+}
+
+</style>
+</html>

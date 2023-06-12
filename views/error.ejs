@@ -1,0 +1,100 @@
+<%- include('./partials/nav.ejs') %>
+    <div class="wrapper">
+    <article>
+        <div class="cards-holder">
+            <div class="card">
+                <form >
+                    <h1>Error 404 Resource not found</h1>
+                </form>
+            </div>
+        </div>
+    
+            <img src="/images/merc.svg" class="merc">
+            <img src="/images/red.svg" class="red">
+            <img src="/images/Compass.png" class="compass ">
+            <img src="/images/blue.svg" class="blue ">
+            <img src="/images/jupiter.svg" class="jupiter">
+      
+
+    </article>
+        
+</div>
+</body>
+<style>
+.cards-holder{
+    transform: translateZ(-7px) scale(1.7);
+    margin-top: 8rem;
+
+}
+article{
+    transform-style: preserve-3d;
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: flex-start;
+    align-items: center;
+}
+.red{
+    transform: translateZ(1px) scale(2.0);
+    z-index: 1;
+    position: relative;
+    height: 129px;
+    left: -1082px;
+    top: 574px;
+    animation-name: none;
+}
+.merc{
+    position: relative;
+    top: 416px;
+    left: 261px;
+    height: 47px;
+    /* filter: drop-shadow(0px 0px 8px #FB4739); */
+    transform: translateZ(-18px) scale(4);
+    animation-name: none;
+
+}
+.wrapper{
+    perspective: 10px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 100vh;
+}
+.blue{
+    height: 50px;
+    transform: translateZ(-4px) scale(6);
+    left: -162px;
+    top: 275px;
+    animation-name: none;
+}
+.compass{
+    position: relative;
+    top: 351px;
+    left: -884px;
+    transform: translateZ(-19px) scale(2.5);
+    filter: blur(5px);
+    animation-name: none;
+}
+.jupiter{
+    position: relative;
+    height: 322px;
+    left: -4315px;
+    top: -285px;
+    transform: translateZ(-92px) scale(2.5);
+    animation-name: none;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+}
+/* width */
+
+</style>
+</html>

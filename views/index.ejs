@@ -1,0 +1,73 @@
+
+<%- include('./partials/nav.ejs') %>
+    <article>
+        <div class="galaxy">
+            <img src="images/merc.svg" class="merc">
+            <img src="images/red.svg" class="red">
+            <img src="images/Compass.png" class="compass ">
+            <img src="images/blue.svg" class="blue ">
+            <img src="images/jupiter.svg" class="jupiter">
+
+        </div>
+        <h1>Pending Tasks</h1>
+        <div class="cards-holder">
+            <% if(tasks[0]){ %>
+            <% tasks.forEach(e=>{%>
+                <% if(e.status == 'complete'){ %>
+                    <div class="card completed">
+                        <%}else{%>
+                    <div class="card">
+                        <%}%>
+                    
+                        <div class="opt">
+                            <img src="images/menu-dots-vertical.svg" class="options">
+                        </div>
+                        <input type="text" value="<%= e.title%>" readonly class="title" id="title<%= e.id%>">
+                        <input type="text" value="<%= e.description%>" readonly class="title" id="desc<%= e.id%>">
+                        <input type="text" value="<%= e.status%>" readonly class="title" id="status<%= e.id%>">
+                        <input type="text" value="<%= e.priority%>" readonly class="title" id="priority<%= e.id%>">
+                        <input type="date" value="<%= e.due_date%>" readonly class="title" id="date<%= e.id%>">
+                        <form action="/delete/<%=e.id%>" method="post" class="wrap">
+                        <input type="submit" value="Delete" id="delete">
+                        </form>
+                        <form action="/edit/<%=e.id%>" method="post" class="wrap">
+                            <input type="submit" value="edit" id="edit">
+                        </form>
+                        <script>
+                            function myfunction(){
+                                console.log("hi");
+
+                            }
+                          
+                        </script>
+                    </div>
+
+                <%   }) %>
+                <% } else {%>
+                    <div class="card">
+                        <h1>No tasks to display</h1>
+                    </div>
+                    <style>
+                        
+                        .card{
+                            justify-content: center;
+                        }
+                        
+                    </style>
+                    <% }%>
+        </div>
+
+    </article>
+    
+   
+</body>
+<style>
+#Layer_1{
+    fill:#EC706B
+}
+.completed{
+    background:rgb(90 225 113 / 17%)
+}
+
+</style>
+</html>
