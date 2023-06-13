@@ -5,6 +5,7 @@ background: #1e1e1e;
 body{
     position: absolute;
 height: 100%;
+overflow-x: hidden;
 width: 100%;
 margin: 0px;
     background: linear-gradient(180deg, rgba(61, 15, 99, 0.2) 5.57%, rgba(21, 22, 33, 0.2) 51.09%);
@@ -17,7 +18,7 @@ position: fixed;
 background: rgba(22, 17, 17, 0.51);
 box-shadow: 0px 0px 1px rgba(207, 205, 205, 0.12);
 backdrop-filter: blur(12.5px);
-width: 100%;
+width: 100vw;
 height: auto;
 margin-left: 3rem;
 flex-direction: row;
@@ -90,7 +91,7 @@ backdrop-filter: blur(10.5px);
 border-radius: 18px;
 border-style: none;
 height: 2rem;
-width: 21rem;
+width: 35vW;
 color: #ffffffab;
 aspect-ratio: 3/1;
 margin: 0.5rem;
@@ -318,4 +319,65 @@ a{
     align-items: center;
     width: 100%;
     margin-top: -30px;
+}
+.mid{
+    display: none;
+}
+@media all and (min-width: 1024px) and (max-width: 1300px)  {    
+
+}
+
+@media all and (min-width: 768px) and (max-width: 1280px) {  
+
+}
+@media all and (min-width: 250px) and (max-width: 520px) {   
+    side-nav{
+        display: flex;
+        z-index: 2;
+        background: rgba(22, 17, 17, 0.51);
+        box-shadow: 0px 0px 1px rgba(207, 205, 205, 0.12);
+        backdrop-filter: blur(12.5px);
+        height: 3rem;
+        width: 100%;
+        bottom: 0%;
+        position: fixed;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-content: center;
+        align-items: center;
+        gap: 45px;
+        justify-content: center;
+    }
+    nav{
+        display: none;
+    }
+    .grid{
+        display: none;
+    }
+    .mid{
+        display: flex;
+        background: rgb(246 39 67 / 92%);
+        box-shadow: 0px 0px 12px rgb(229 38 50 / 61%);
+        border-radius: 12px;
+        border-style: none;
+        margin: 0.5rem;
+        align-items: center;
+        justify-content: center;
+    width: 53px;
+    aspect-ratio: 1/1;
+
+    }
+    .card{
+        min-width: 80vw;
+        width: 40%;
+    }
+    article{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 3rem;
+    }
 }
